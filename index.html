@@ -3,54 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Creator</title>
+  <title>AI Music Creator</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>🎵 Music Creator</h1>
-    <p>Create beats, write lyrics, and record your ideas.</p>
+
+  <header class="topbar">
+    <h1>🎵 AI Music Creator</h1>
+    <p>Turn your ideas into songs</p>
   </header>
 
   <main>
-    <section class="card">
-      <h2>🥁 Beat Maker</h2>
-      <div class="controls">
-        <label>BPM <input id="bpm" type="number" min="60" max="180" value="100"></label>
-        <button id="playBeat">▶ Play</button>
-        <button id="clearBeat">Clear</button>
+
+    <section class="creator-card">
+      <h2>✨ Create a Song</h2>
+
+      <label for="songPrompt">Describe your song</label>
+
+      <textarea
+        id="songPrompt"
+        placeholder="Example: A romantic Hindi pop song about missing someone, emotional vocals, beautiful piano and cinematic drums..."
+      ></textarea>
+
+      <div class="options">
+
+        <div>
+          <label for="genre">🎼 Genre</label>
+          <select id="genre">
+            <option>Pop</option>
+            <option>Hip Hop</option>
+            <option>R&B</option>
+            <option>Rock</option>
+            <option>Electronic</option>
+            <option>Lo-fi</option>
+            <option>Bollywood</option>
+            <option>Classical</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="mood">😊 Mood</label>
+          <select id="mood">
+            <option>Emotional</option>
+            <option>Happy</option>
+            <option>Sad</option>
+            <option>Romantic</option>
+            <option>Energetic</option>
+            <option>Dark</option>
+            <option>Peaceful</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="language">🌍 Language</label>
+          <select id="language">
+            <option>English</option>
+            <option>Hindi</option>
+            <option>Manipuri</option>
+            <option>Bengali</option>
+            <option>Tamil</option>
+            <option>Telugu</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="vocals">🎤 Vocals</label>
+          <select id="vocals">
+            <option>Female</option>
+            <option>Male</option>
+            <option>Duet</option>
+            <option>Instrumental</option>
+          </select>
+        </div>
+
       </div>
-      <div id="grid" class="beat-grid"></div>
-      <p class="hint">Tap the squares to create a 16-step drum pattern.</p>
+
+      <button id="generateBtn" class="generate-btn">
+        ✨ Generate Song
+      </button>
+
+      <div id="status" class="status"></div>
+
     </section>
 
-    <section class="card">
-      <h2>🎹 Melody</h2>
-      <div id="piano" class="piano"></div>
-      <p id="noteName" class="note-name">Tap a key to play a note.</p>
+
+    <section class="creator-card">
+      <h2>📝 Lyrics</h2>
+
+      <textarea
+        id="lyrics"
+        placeholder="Your song lyrics will appear here..."
+      ></textarea>
+
+      <div class="button-row">
+        <button id="saveLyrics">💾 Save Lyrics</button>
+        <button id="downloadLyrics">⬇️ Download Lyrics</button>
+      </div>
+
     </section>
 
-    <section class="card">
-      <h2>✍️ Lyrics</h2>
-      <textarea id="lyrics" placeholder="Write your lyrics here..."></textarea>
-      <div class="save-row">
-        <button id="saveLyrics">Save Lyrics</button>
-        <button id="downloadLyrics">Download .txt</button>
+
+    <section class="creator-card">
+      <h2>🎧 Your Song</h2>
+
+      <div id="songResult" class="song-result">
+        <p>Your generated song will appear here.</p>
       </div>
+
+      <audio id="audioPlayer" controls></audio>
+
     </section>
 
-    <section class="card">
-      <h2>🎙️ Voice Recorder</h2>
-      <div class="controls">
-        <button id="record">● Start Recording</button>
-        <button id="stop" disabled>■ Stop</button>
-        <audio id="audio" controls></audio>
-      </div>
-      <p id="recordStatus">Microphone permission is required to record.</p>
+
+    <section class="creator-card advanced">
+      <h2>⚙️ Advanced Options</h2>
+
+      <label for="tempo">Tempo (BPM)</label>
+      <input id="tempo" type="number" value="100" min="40" max="220">
+
+      <label for="style">Music style details</label>
+      <input
+        id="style"
+        type="text"
+        placeholder="Example: warm piano, deep bass, cinematic drums"
+      >
     </section>
+
   </main>
 
-  <footer>Music Creator • Your ideas, your music.</footer>
+  <footer>
+    <p>🎵 AI Music Creator</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
-</html>
+  </html>
