@@ -1,0 +1,116 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #f4f6fb;
+  color: #18202a;
+}
+header {
+  text-align: center;
+  padding: 28px 16px;
+  background: #24292f;
+  color: white;
+}
+header h1 { margin: 0 0 6px; font-size: 30px; }
+header p { margin: 0; opacity: .85; }
+main {
+  width: min(900px, 94%);
+  margin: 20px auto;
+  display: grid;
+  gap: 18px;
+}
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+h2 { margin-top: 0; }
+.controls, .save-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 16px;
+  background: #238636;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:disabled { opacity: .45; cursor: not-allowed; }
+button:hover:not(:disabled) { filter: brightness(1.08); }
+input {
+  width: 80px;
+  padding: 9px;
+  border: 1px solid #ccd3dc;
+  border-radius: 8px;
+}
+.beat-grid {
+  display: grid;
+  grid-template-columns: 90px repeat(16, 1fr);
+  gap: 5px;
+  overflow-x: auto;
+}
+.step-label { text-align: center; font-size: 11px; padding: 7px 0; }
+.drum-name { padding: 10px 4px; font-weight: 700; }
+.step {
+  aspect-ratio: 1;
+  min-width: 22px;
+  border-radius: 6px;
+  background: #e8edf3;
+  cursor: pointer;
+}
+.step.active { background: #8250df; }
+.step.current { outline: 3px solid #f0883e; }
+.piano {
+  display: flex;
+  height: 170px;
+  overflow-x: auto;
+  padding: 4px;
+}
+.key {
+  flex: 0 0 48px;
+  height: 150px;
+  background: white;
+  border: 1px solid #aeb7c2;
+  border-radius: 0 0 7px 7px;
+  color: #222;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.key.black {
+  height: 95px;
+  background: #20252b;
+  color: white;
+  margin: 0 -12px;
+  z-index: 2;
+  flex-basis: 30px;
+  border-color: #111;
+}
+.key:active { transform: translateY(2px); }
+.note-name { min-height: 24px; font-weight: 700; }
+textarea {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid #ccd3dc;
+  border-radius: 10px;
+  font: inherit;
+}
+audio { width: min(100%, 450px); }
+.hint, #recordStatus { color: #66717d; }
+footer { text-align: center; padding: 20px; color: #66717d; }
+@media (max-width: 600px) {
+  .beat-grid { grid-template-columns: 70px repeat(16, 25px); }
+  .card { padding: 15px; }
+}

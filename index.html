@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Creator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎵 Music Creator</h1>
+    <p>Create beats, write lyrics, and record your ideas.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>🥁 Beat Maker</h2>
+      <div class="controls">
+        <label>BPM <input id="bpm" type="number" min="60" max="180" value="100"></label>
+        <button id="playBeat">▶ Play</button>
+        <button id="clearBeat">Clear</button>
+      </div>
+      <div id="grid" class="beat-grid"></div>
+      <p class="hint">Tap the squares to create a 16-step drum pattern.</p>
+    </section>
+
+    <section class="card">
+      <h2>🎹 Melody</h2>
+      <div id="piano" class="piano"></div>
+      <p id="noteName" class="note-name">Tap a key to play a note.</p>
+    </section>
+
+    <section class="card">
+      <h2>✍️ Lyrics</h2>
+      <textarea id="lyrics" placeholder="Write your lyrics here..."></textarea>
+      <div class="save-row">
+        <button id="saveLyrics">Save Lyrics</button>
+        <button id="downloadLyrics">Download .txt</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🎙️ Voice Recorder</h2>
+      <div class="controls">
+        <button id="record">● Start Recording</button>
+        <button id="stop" disabled>■ Stop</button>
+        <audio id="audio" controls></audio>
+      </div>
+      <p id="recordStatus">Microphone permission is required to record.</p>
+    </section>
+  </main>
+
+  <footer>Music Creator • Your ideas, your music.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
